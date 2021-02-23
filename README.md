@@ -44,6 +44,242 @@ The automl configuration takes in training data, labelled data, and a cross vali
 `min_samples_leaf` is the minimum number of samples required to be at a leaf node. `min_samples_split` is the minimum number of samples required to split an internal node.
 `min_weight_fraction_leaf` is the minimum weighted fraction of the sum total of weights (of all the input samples) required to be at a leaf node.
 
+Best pipeline details:
+```
+datatransformer
+{'allow_chargram': None,
+ 'enable_dnn': None,
+ 'enable_feature_sweeping': None,
+ 'feature_sweeping_config': None,
+ 'feature_sweeping_timeout': None,
+ 'featurization_config': None,
+ 'force_text_dnn': None,
+ 'is_cross_validation': None,
+ 'is_onnx_compatible': None,
+ 'logger': None,
+ 'observer': None,
+ 'task': None,
+ 'working_dir': None}
+
+prefittedsoftvotingclassifier
+{'estimators': ['1:maxabsscaler',
+                '0:maxabsscaler',
+                '27:sparsenormalizer',
+                '26:sparsenormalizer',
+                '13:minmaxscaler',
+                '5:standardscalerwrapper',
+                '11:minmaxscaler',
+                '20:standardscalerwrapper'],
+ 'weights': [0.13333333333333333,
+             0.4,
+             0.13333333333333333,
+             0.06666666666666667,
+             0.06666666666666667,
+             0.06666666666666667,
+             0.06666666666666667,
+             0.06666666666666667]}
+
+1 - maxabsscaler
+{'copy': True}
+
+1 - xgboostclassifier
+{'base_score': 0.5,
+ 'booster': 'gbtree',
+ 'colsample_bylevel': 1,
+ 'colsample_bynode': 1,
+ 'colsample_bytree': 1,
+ 'gamma': 0,
+ 'learning_rate': 0.1,
+ 'max_delta_step': 0,
+ 'max_depth': 3,
+ 'min_child_weight': 1,
+ 'missing': nan,
+ 'n_estimators': 100,
+ 'n_jobs': 1,
+ 'nthread': None,
+ 'objective': 'binary:logistic',
+ 'random_state': 0,
+ 'reg_alpha': 0,
+ 'reg_lambda': 1,
+ 'scale_pos_weight': 1,
+ 'seed': None,
+ 'silent': None,
+ 'subsample': 1,
+ 'tree_method': 'auto',
+ 'verbose': -10,
+ 'verbosity': 0}
+
+0 - maxabsscaler
+{'copy': True}
+
+0 - lightgbmclassifier
+{'boosting_type': 'gbdt',
+ 'class_weight': None,
+ 'colsample_bytree': 1.0,
+ 'importance_type': 'split',
+ 'learning_rate': 0.1,
+ 'max_depth': -1,
+ 'min_child_samples': 20,
+ 'min_child_weight': 0.001,
+ 'min_split_gain': 0.0,
+ 'n_estimators': 100,
+ 'n_jobs': 1,
+ 'num_leaves': 31,
+ 'objective': None,
+ 'random_state': None,
+ 'reg_alpha': 0.0,
+ 'reg_lambda': 0.0,
+ 'silent': True,
+ 'subsample': 1.0,
+ 'subsample_for_bin': 200000,
+ 'subsample_freq': 0,
+ 'verbose': -10}
+
+27 - sparsenormalizer
+{'copy': True, 'norm': 'l2'}
+
+27 - xgboostclassifier
+{'base_score': 0.5,
+ 'booster': 'gbtree',
+ 'colsample_bylevel': 1,
+ 'colsample_bynode': 1,
+ 'colsample_bytree': 0.5,
+ 'eta': 0.5,
+ 'gamma': 0,
+ 'learning_rate': 0.1,
+ 'max_delta_step': 0,
+ 'max_depth': 7,
+ 'max_leaves': 15,
+ 'min_child_weight': 1,
+ 'missing': nan,
+ 'n_estimators': 100,
+ 'n_jobs': 1,
+ 'nthread': None,
+ 'objective': 'reg:logistic',
+ 'random_state': 0,
+ 'reg_alpha': 1.875,
+ 'reg_lambda': 1.3541666666666667,
+ 'scale_pos_weight': 1,
+ 'seed': None,
+ 'silent': None,
+ 'subsample': 0.7,
+ 'tree_method': 'auto',
+ 'verbose': -10,
+ 'verbosity': 0}
+
+26 - sparsenormalizer
+{'copy': True, 'norm': 'l1'}
+
+26 - lightgbmclassifier
+{'boosting_type': 'gbdt',
+ 'class_weight': None,
+ 'colsample_bytree': 0.99,
+ 'importance_type': 'split',
+ 'learning_rate': 0.05789894736842106,
+ 'max_bin': 240,
+ 'max_depth': 10,
+ 'min_child_samples': 2727,
+ 'min_child_weight': 2,
+ 'min_split_gain': 0.21052631578947367,
+ 'n_estimators': 400,
+ 'n_jobs': 1,
+ 'num_leaves': 197,
+ 'objective': None,
+ 'random_state': None,
+ 'reg_alpha': 0.5789473684210527,
+ 'reg_lambda': 0.21052631578947367,
+ 'silent': True,
+ 'subsample': 0.09947368421052633,
+ 'subsample_for_bin': 200000,
+ 'subsample_freq': 0,
+ 'verbose': -10}
+
+13 - minmaxscaler
+{'copy': True, 'feature_range': (0, 1)}
+
+13 - sgdclassifierwrapper
+{'alpha': 4.693930612244897,
+ 'class_weight': 'balanced',
+ 'eta0': 0.001,
+ 'fit_intercept': False,
+ 'l1_ratio': 0.3877551020408163,
+ 'learning_rate': 'constant',
+ 'loss': 'squared_hinge',
+ 'max_iter': 1000,
+ 'n_jobs': 1,
+ 'penalty': 'none',
+ 'power_t': 0.3333333333333333,
+ 'random_state': None,
+ 'tol': 0.001}
+
+5 - standardscalerwrapper
+{'class_name': 'StandardScaler',
+ 'copy': True,
+ 'module_name': 'sklearn.preprocessing._data',
+ 'with_mean': True,
+ 'with_std': True}
+
+5 - sgdclassifierwrapper
+{'alpha': 3.0612938775510203,
+ 'class_weight': 'balanced',
+ 'eta0': 0.0001,
+ 'fit_intercept': True,
+ 'l1_ratio': 0.8979591836734693,
+ 'learning_rate': 'constant',
+ 'loss': 'modified_huber',
+ 'max_iter': 1000,
+ 'n_jobs': 1,
+ 'penalty': 'none',
+ 'power_t': 0.6666666666666666,
+ 'random_state': None,
+ 'tol': 0.01}
+
+11 - minmaxscaler
+{'copy': True, 'feature_range': (0, 1)}
+
+11 - sgdclassifierwrapper
+{'alpha': 9.59184081632653,
+ 'class_weight': 'balanced',
+ 'eta0': 0.01,
+ 'fit_intercept': True,
+ 'l1_ratio': 0.3877551020408163,
+ 'learning_rate': 'invscaling',
+ 'loss': 'log',
+ 'max_iter': 1000,
+ 'n_jobs': 1,
+ 'penalty': 'none',
+ 'power_t': 0,
+ 'random_state': None,
+ 'tol': 0.01}
+
+20 - standardscalerwrapper
+{'class_name': 'StandardScaler',
+ 'copy': True,
+ 'module_name': 'sklearn.preprocessing._data',
+ 'with_mean': True,
+ 'with_std': True}
+
+20 - randomforestclassifier
+{'bootstrap': False,
+ 'ccp_alpha': 0.0,
+ 'class_weight': 'balanced',
+ 'criterion': 'gini',
+ 'max_depth': None,
+ 'max_features': 0.05,
+ 'max_leaf_nodes': None,
+ 'max_samples': None,
+ 'min_impurity_decrease': 0.0,
+ 'min_impurity_split': None,
+ 'min_samples_leaf': 0.01,
+ 'min_samples_split': 0.10368421052631578,
+ 'min_weight_fraction_leaf': 0.0,
+ 'n_estimators': 10,
+ 'n_jobs': 1,
+ 'oob_score': False,
+ 'random_state': None,
+ 'verbose': 0,
+ 'warm_start': False}
+```
 ## Pipeline comparison
 
 The model accuracy for the hyperdrive model is *91.42%* and the accuracy score for the AutoML is *91.67%*, the difference is a bit significant and may be due to difference in both architectures. For the hyperdrive model, it requires lots of manual fine-tuning and less flexibility in choosing the right hyperparameters to help increase the performance of the model which may be daunting, hence a model may not necessarily perform well for a use case but there won't be a way to determine unless it is tested, however, the AutoML give the flexibility of exploring other algorithm and easy hyperparameter tuning.
